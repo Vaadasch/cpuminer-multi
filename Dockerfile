@@ -5,14 +5,11 @@
 #
 #
 
-FROM		ubuntu:12.10
+FROM		ubuntu:16.04
 
 RUN		apt-get update -qqy
 
-RUN		apt-get install -qqy automake
-RUN		apt-get install -qqy libcurl4-openssl-dev
-RUN		apt-get install -qqy git
-RUN		apt-get install -qqy make
+RUN		apt-get install -qqy apt-get install libcurl4-openssl-dev libncurses5-dev pkg-config automake yasm git make
 
 RUN		git clone https://github.com/pooler/cpuminer
 
