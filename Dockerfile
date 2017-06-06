@@ -5,16 +5,16 @@
 #
 #
 
-FROM		ubuntu:16.04
+FROM		ubuntu:12.10
 
 RUN		apt-get update -qq
 
-RUN		apt-get install -qqy automake build-essential autoconf libtool
-RUN		apt-get install -qqy libcurl4-openssl-dev libudev-dev libjansson-dev libncurses5-dev 
+RUN		apt-get install -qqy automake
+RUN		apt-get install -qqy libcurl4-openssl-dev
 RUN		apt-get install -qqy git
 RUN		apt-get install -qqy make
 
-RUN		git clone https://github.com/Vaadasch/cpuminer-multi
+RUN		git clone https://github.com/pooler/cpuminer
 
 RUN		cd cpuminer && ./autogen.sh
 RUN		cd cpuminer && ./configure CFLAGS="-O3"
