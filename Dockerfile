@@ -9,8 +9,8 @@ FROM		ubuntu:16.04
 
 RUN		apt-get update -qq
 
-RUN		apt-get install -qqy automake
-RUN		apt-get install -qqy libcurl4-openssl-dev
+RUN		apt-get install -qqy automake build-essential autoconf libtool
+RUN		apt-get install -qqy libcurl4-openssl-dev libudev-dev libjansson-dev libncurses5-dev 
 RUN		apt-get install -qqy git
 RUN		apt-get install -qqy make
 
