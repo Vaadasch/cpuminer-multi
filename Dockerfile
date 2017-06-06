@@ -7,7 +7,7 @@
 
 FROM		ubuntu:12.10
 
-RUN		apt-get update -qq
+RUN		apt-get update -qqy
 
 RUN		apt-get install -qqy automake
 RUN		apt-get install -qqy libcurl4-openssl-dev
