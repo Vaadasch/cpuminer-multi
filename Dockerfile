@@ -5,8 +5,7 @@
 #
 #
 
-FROM		ubuntu:12.10
-MAINTAINER	Guillaume J. Charmes <guillaume@charmes.net>
+FROM		ubuntu:16.04
 
 RUN		apt-get update -qq
 
@@ -15,7 +14,7 @@ RUN		apt-get install -qqy libcurl4-openssl-dev
 RUN		apt-get install -qqy git
 RUN		apt-get install -qqy make
 
-RUN		git clone https://github.com/pooler/cpuminer
+RUN		git clone https://github.com/Vaadasch/cpuminer-multi
 
 RUN		cd cpuminer && ./autogen.sh
 RUN		cd cpuminer && ./configure CFLAGS="-O3"
@@ -23,3 +22,4 @@ RUN		cd cpuminer && make
 
 WORKDIR		/cpuminer
 ENTRYPOINT	["./minerd"]
+CMD ["-a", "scrypt", "-o", "stratum+tcp://node1.guldenpool.nl:27100", "-o", "stratum+tcp://node2.guldenpool.nl:27100", "-u", "GbWNaxo5AbDMei5W31Y4WTLP8jnX5evgBn" "-p", "X" ]
